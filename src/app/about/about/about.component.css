@@ -1,0 +1,8 @@
+.aboutone {
+  display: flex;
+  flex-direction: row;
+}
+
+.aboutoneImage {
+ padding-right: 10px;
+}

@@ -10,6 +10,11 @@ import { CarousalsliderComponent } from './home/carousalslider/carousalslider.co
 import { TestimonialComponent } from './home/testimonial/testimonial.component';
 import { AboutComponent } from './about/about/about.component';
 import { ContactComponent } from './contact/contact/contact.component';
+import { AdvancedsearchComponent } from './home/advancedsearch/advancedsearch.component';
+import { AboutinhomeComponent } from './home/aboutinhome/aboutinhome.component';
+import { OnebedroomComponent } from './home/onebedroom/onebedroom.component';
+import { TwobedroomComponent } from './home/twobedroom/twobedroom.component';
+import { ThreebedroomComponent } from './home/threebedroom/threebedroom.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +25,12 @@ import { ContactComponent } from './contact/contact/contact.component';
     CarousalsliderComponent,
     TestimonialComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    AdvancedsearchComponent,
+    AboutinhomeComponent,
+    OnebedroomComponent,
+    TwobedroomComponent,
+    ThreebedroomComponent
   ],
   imports: [
     BrowserModule,

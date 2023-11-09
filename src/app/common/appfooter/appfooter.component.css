@@ -10,3 +10,13 @@
 .footer p, .footer address {
     font-size: 16px;
 }
+
+.footerText{
+    display: flex;
+    justify-content: center;
+    color: #fff !important;
+    padding: 10px;
+    font-weight: bold;
+    background-color: #ff9e7b !important;
+
+}

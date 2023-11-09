@@ -1,0 +1,17 @@
+.nav-link {
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.navbar {
+    background-color: #ff9e7b;
+}
+
+/* 
+.navbar {
+    max-height: 80px;
+} */
+/* ul.navbar-nav > li > a {
+    line-height: 50px;
+} */

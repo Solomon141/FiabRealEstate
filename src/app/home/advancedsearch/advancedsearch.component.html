@@ -1,0 +1,60 @@
+<div class="container" style="padding-top: 5vh; padding-bottom: 5vh;">
+    <div class="searchBar">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card" style="width: 100%;">
+                    <div class="card-header text-center" style="color: #FF9E7B; text-transform: uppercase; font-weight: bold;">
+                        CHECK YOUR DREAM HOUSE
+                    </div>
+                    <div class="input-group" style="padding: 5px;">
+                        <select class="form-select" id="inputGroupSelect04"
+                            aria-label="Example select with button addon">
+                            <option selected>Choose Location</option>
+                            <option value="Addis Ababa"> Addis Ababa </option>
+                            <option value="Mekelle">Mekelle</option>
+                            <option value="Hawwassa">Hawwassa</option>
+                        </select>
+                        <select class="form-select" id="inputGroupSelect04"
+                            aria-label="Example select with button addon">
+                            <option selected>Type</option>
+                            <option value="Addis Ababa"> 1 Bed Room  </option>
+                            <option value="Mekelle">2 Bed Room</option>
+                            <option value="Hawwassa">3 Bed Room</option>
+                        </select>
+                        <select class="form-select" id="inputGroupSelect04"
+                            aria-label="Example select with button addon">
+                            <option selected>Payment</option>
+                            <option value="Addis Ababa"> Long Time </option>
+                            <option value="Mekelle"> Diaspora </option>
+                            <option value="Hawwassa"> One Time </option>
+                        </select>
+                        <button class="btn btn-outline-secondary" type="button">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="allItems.length > 0">
+        <div class="row">
+            <div class="col-sm-4" *ngFor="let item of items">
+                <div class="card" style="width: 100%;  margin-top:5px">
+                    <img [src]="item.imgpath" style="height: 30vh;" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div id="bradColor" style="display: flex; flex-direction: row; justify-content: space-between;">
+                            <h5 class="card-title"> {{item.lacated.region}} </h5>
+                            <h5 class="card-title"> {{item.area}} &#13217;</h5>
+                        </div>
+                        <div> {{item.lacated.zone}} - {{item.lacated.woreda}} </div>
+                        <div class="card-text">{{item.lacated.description}}.</div>
+                        <div> {{item.price}} </div>
+                        <div style=" display: flex; justify-content:center">
+                            <a href="#" style="background-color:#FF9E7B" class="btn">View Detail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
