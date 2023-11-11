@@ -9,7 +9,7 @@ import { TwobedroomComponent } from './home/twobedroom/twobedroom.component';
 import { ThreebedroomComponent } from './home/threebedroom/threebedroom.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'onebedroom', component: OnebedroomComponent },
