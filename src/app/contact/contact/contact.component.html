@@ -1,31 +1,48 @@
-
-
 <div class="container">
-    <h1 class="text-center">FIAB </h1>
-    <p class="text-center">Please fill out the form below and we will get back to you as soon as possible.</p>
-    <div class="row">
-      <div class="col-md-6 offset-md-3">
-        <form action="send.php" method="post">
-          <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" name="name" required>
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" name="email" required>
-          </div>
-          <div class="mb-3">
-            <label for="subject" class="form-label">Subject</label>
-            <input type="text" class="form-control" id="subject" name="subject" required>
-          </div>
-          <div class="mb-3">
-            <label for="message" class="form-label">Message</label>
-            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-          </div>
-          <div class="mb-3">
-            <button type="submit" class="btn btn-primary">Send</button>
-          </div>
-        </form>
-      </div>
+  <h1 class="text-center">FIAB </h1>
+  <p class="text-center">Please fill out the form below and we will get back to you as soon as possible.</p>
+  <div class="row">
+    <div class="col-sm-6">
+      <img src="assets/carousel/three.jpeg" alt="Logo" height="100%" width="100%" style="border-radius: 3px;">
     </div>
+
+    <div class="col-sm-6">
+      <form action="send.php" method="post">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+          <label for="subject" class="form-label">Subject</label>
+          <input type="text" class="form-control" id="subject" name="subject" required>
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+        </div>
+        <div class="mb-3">
+          <button type="submit" class="btn btn-primary">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-9" style="border-radius: 15px; padding-top :5px;">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.2018885991565!2d38.74563717386788!3d9.04534068873528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b8520975f6915%3A0xb610e0d843e3cf2b!2sFiab%20Real%20Estate%20Share%20Company!5e0!3m2!1sen!2set!4v1699721913571!5m2!1sen!2set"
+        width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="col-sm-3" style="border-radius: 15px; padding-top :5px; display:flex; justify-content: center; align-items: center;">
+      <!-- <img src="assets/direction.png" alt="Logo" height="100%" width="100%" style="border-radius: 3px;"> -->
+      <!-- <img src="assets/direction.png" alt="Logo" height="100%" width="100%" style="border-radius: 3px;"> -->
+      <img src="assets/route/directions.jpg" alt="Logo" style="border-radius: 3px;">
+
+    </div>
+  </div>
 </div>
