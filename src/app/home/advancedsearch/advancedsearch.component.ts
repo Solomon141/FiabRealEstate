@@ -1,11 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FloorService } from "../../services/floor.service"
 
 @Component({
   selector: 'app-advancedsearch',
   templateUrl: './advancedsearch.component.html',
   styleUrls: ['./advancedsearch.component.css']
 })
-export class AdvancedsearchComponent {
+export class AdvancedsearchComponent implements OnInit {
+  constructor(private floorService: FloorService) { }
+
+  ngOnInit(): void {
+    this.floorService.getFloor().subscribe(
+      (data) => {
+        // handle the data here
+        console.log(data);
+      },
+      (error) => {
+        // handle errors here
+        console.error('Error fetching data:', error);
+      }
+    );
+  }
 
   allItems = [
     {
