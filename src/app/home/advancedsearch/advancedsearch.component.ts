@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FloorService } from "../../services/floor.service"
+import { RoomsService } from '../../services/rooms.services';
 
 @Component({
   selector: 'app-advancedsearch',
@@ -7,10 +8,10 @@ import { FloorService } from "../../services/floor.service"
   styleUrls: ['./advancedsearch.component.css']
 })
 export class AdvancedsearchComponent implements OnInit {
-  constructor(private floorService: FloorService) { }
+  constructor(private roomsService: RoomsService) { }
 
   ngOnInit(): void {
-    this.floorService.getFloor().subscribe(
+    this.roomsService.fetchRooms().subscribe(
       (data) => {
         // handle the data here
         console.log(data);
