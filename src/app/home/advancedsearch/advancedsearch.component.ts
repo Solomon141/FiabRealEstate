@@ -7,6 +7,7 @@ import { RoomsService } from '../../services/rooms.services';
   templateUrl: './advancedsearch.component.html',
   styleUrls: ['./advancedsearch.component.css']
 })
+
 export class AdvancedsearchComponent implements OnInit {
   constructor(
     private roomsService: RoomsService,
