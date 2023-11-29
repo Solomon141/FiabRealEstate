@@ -7,26 +7,26 @@
                         CHECK YOUR DREAM HOUSE
                     </div>
                     <div class="input-group" style="padding: 5px;">
-                        <select class="form-select" id="inputGroupSelect04"
+                        <select class="form-select" (change)="onRegionChange($event)" id="inputGroupSelect04"
                             aria-label="Example select with button addon">
                             <option selected>Choose Location</option>
                             <option value="Addis Ababa"> Addis Ababa </option>
                             <option value="Mekelle">Mekelle</option>
                             <option value="Hawwassa">Hawwassa</option>
                         </select>
-                        <select class="form-select" id="inputGroupSelect04"
+                        <select class="form-select" (change)="onBedroomTypeChange($event)" id="inputGroupSelect04"
                             aria-label="Example select with button addon">
                             <option selected>Type</option>
-                            <option value="Addis Ababa"> 1 Bed Room  </option>
-                            <option value="Mekelle">2 Bed Room</option>
-                            <option value="Hawwassa">3 Bed Room</option>
+                            <option value="1 Bed Room">1 Bed Room  </option>
+                            <option value="2 Bed Room">2 Bed Room</option>
+                            <option value="3 Bed Room">3 Bed Room</option>
                         </select>
-                        <select class="form-select" id="inputGroupSelect04"
+                        <select class="form-select" (change)="onPaymentMethodChange($event)" id="inputGroupSelect04"
                             aria-label="Example select with button addon">
                             <option selected>Payment</option>
-                            <option value="Addis Ababa"> Long Time </option>
-                            <option value="Mekelle"> Diaspora </option>
-                            <option value="Hawwassa"> One Time </option>
+                            <option value="Long Time"> Long Time </option>
+                            <option value="Diaspora"> Diaspora </option>
+                            <option value="One Time"> One Time </option>
                         </select>
                         <button class="btn btn-outline-secondary" type="button">Search</button>
                     </div>
@@ -43,7 +43,7 @@
                     <div class="card-body">
                         <div id="bradColor" style="display: flex; flex-direction: row; justify-content: space-between;">
                             <h5 class="card-title"> {{item.lacated.region}} </h5>
-                            <h5 class="card-title"> {{item.area}} &#13217;</h5>
+                            <h5 class="card-title"> {{item.area}} &#13217; </h5>
                         </div>
                         <div> {{item.lacated.zone}} - {{item.lacated.woreda}} </div>
                         <div class="card-text">{{item.lacated.description}}.</div>
