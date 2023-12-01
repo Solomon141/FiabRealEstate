@@ -14,4 +14,11 @@ export class RoomsService {
     createRoom() { }
 
     deleteRoom() { }
+
+    getRoomsGivenParaeters(regionId: number, pmId: number): Observable<any>{
+        let param_regionId = new HttpParams().set('regionId', regionId);
+        let param_pmId = new HttpParams().set('pmId', pmId);
+
+        return this.http.get("", {params: param_regionId && param_pmId})
+    }
 }

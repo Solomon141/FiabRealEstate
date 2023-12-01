@@ -2,11 +2,7 @@
     <div class="searchBar">
         <div class="row">
             <div class="col-sm-12">
-                <select name="" id="">
-                    <option value="" *ngFor="let room of lstRooms"> 
-                        {{room.imgPath}}
-                    </option>
-                </select>
+               {{payementMethodSelectedId}} {{locationSelectedId}}
             </div>
         </div>
         <div class="row">
@@ -16,9 +12,9 @@
                         CHECK YOUR DREAM HOUSE
                     </div>
                     <div class="input-group" style="padding: 5px;">
-                        <select class="form-select" (change)="onRegionChange($event)" >
+                        <select class="form-select" (change)="onRegionChange($event)" [(ngModel)]='locationSelectedId' >
                             <option selected>Choose Location</option>
-                            <option *ngFor="let region of lstRegions"> {{region.name}} </option>
+                            <option *ngFor="let region of lstRegions" [value]="region.regionId"> {{region.name}} </option>
                         </select>
                         <select class="form-select" (change)="onBedroomTypeChange($event)" id="inputGroupSelect04"
                             aria-label="Example select with button addon">
@@ -28,13 +24,8 @@
                             <option value="2">2 Bed Room</option>
                             <option value="3">3 Bed Room</option>
                         </select>
-                        <select class="form-select" (change)="onPaymentMethodChange($event)" id="inputGroupSelect04"
-                            aria-label="Example select with button addon">
-                            <option selected>Payment</option>
-                            <option *ngFor="let payments of lstPayments"> {{payments.pmName}} </option>
-                            <!-- <option value="1"> Long Time </option>
-                            <option value="2"> Diaspora </option>
-                            <option value="3"> One Time </option> -->
+                        <select class="form-select" (change)="onPaymentMethodChange($event)" [(ngModel)]='payementMethodSelectedId' >
+                            <option *ngFor="let payments of lstPayments" [value]="payments.pmId"> {{payments.pmName}} </option>
                         </select>
                         <button class="btn btn-outline-secondary" type="button">Search</button>
                     </div>
@@ -43,11 +34,28 @@
         </div>
     </div>
 
-    <div *ngIf="allItems.length > 0">
+    <div *ngIf="lstRooms">
         <div class="row">
-            <div class="col-sm-4" *ngFor="let item of items">
+            <div class="col-sm-4" *ngFor="let item of lstRooms">
                 <div class="card" style="width: 100%;  margin-top:5px">
-                    <img [src]="item.imgpath" style="height: 30vh;" class="card-img-top" alt="...">
+
+
+                    <img [src]="item.imgPath" style="height: 30vh;" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div id="bradColor" style="display: flex; flex-direction: row; justify-content: space-between;">
+                            <h5 class="card-title"> {{item.region?.name}} </h5>
+                            <h5 class="card-title"> {{item.area}} &#13217; </h5>
+                        </div>
+                        
+                        <div class="card-text">{{item.price}}.</div>
+                        <div> {{item.price}} </div>
+                        <div style=" display: flex; justify-content:center">
+                            <a href="#" style="background-color:#FF9E7B" class="btn">View Detail</a>
+                        </div>
+                    </div>
+
+
+                    <!-- <img [src]="item.imgpath" style="height: 30vh;" class="card-img-top" alt="...">
                     <div class="card-body">
                         <div id="bradColor" style="display: flex; flex-direction: row; justify-content: space-between;">
                             <h5 class="card-title"> {{item.lacated.region}} </h5>
@@ -59,7 +67,7 @@
                         <div style=" display: flex; justify-content:center">
                             <a href="#" style="background-color:#FF9E7B" class="btn">View Detail</a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

@@ -4,7 +4,7 @@ export class Rooms {
     "area": string;
     "price": string;
     "isCompleted": boolean;
-    "floor": object;
-    "region": object;
-    "paymentMethod": object
+    "floor": any;
+    "region": any;
+    "paymentMethod": any
 }
