@@ -3,15 +3,15 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 
 @Injectable({ providedIn: "root", })
-export class RoomsService {
+export class RegionsService {
     constructor(private http: HttpClient) { }
 
-    fetchRooms(): Observable<any> {
-        const url = 'http://localhost:8082/rooms';
+    fetchRegions(): Observable<any> {
+        const url = 'http://localhost:8082/region';
         return this.http.get(url);
     }
 
-    createRoom() { }
+    createRegion() { }
 
-    deleteRoom() { }
+    deleteRegion() { }
 }

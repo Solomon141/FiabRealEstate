@@ -2,31 +2,39 @@
     <div class="searchBar">
         <div class="row">
             <div class="col-sm-12">
+                <select name="" id="">
+                    <option value="" *ngFor="let room of lstRooms"> 
+                        {{room.imgPath}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
                 <div class="card" style="width: 100%; border-color: #FF9E7B;" >
                     <div class="card-header text-center" style="color: #FF9E7B; text-transform: uppercase; font-weight: bold;">
                         CHECK YOUR DREAM HOUSE
                     </div>
                     <div class="input-group" style="padding: 5px;">
-                        <select class="form-select" (change)="onRegionChange($event)" id="inputGroupSelect04"
-                            aria-label="Example select with button addon">
+                        <select class="form-select" (change)="onRegionChange($event)" >
                             <option selected>Choose Location</option>
-                            <option value="Addis Ababa"> Addis Ababa </option>
-                            <option value="Mekelle">Mekelle</option>
-                            <option value="Hawwassa">Hawwassa</option>
+                            <option *ngFor="let region of lstRegions"> {{region.name}} </option>
                         </select>
                         <select class="form-select" (change)="onBedroomTypeChange($event)" id="inputGroupSelect04"
                             aria-label="Example select with button addon">
                             <option selected>Type</option>
-                            <option value="1 Bed Room">1 Bed Room  </option>
-                            <option value="2 Bed Room">2 Bed Room</option>
-                            <option value="3 Bed Room">3 Bed Room</option>
+                            <!-- <option *ngFor="let room of lstRooms"> Addis Ababa </option> -->
+                            <option value="1">1 Bed Room  </option>
+                            <option value="2">2 Bed Room</option>
+                            <option value="3">3 Bed Room</option>
                         </select>
                         <select class="form-select" (change)="onPaymentMethodChange($event)" id="inputGroupSelect04"
                             aria-label="Example select with button addon">
                             <option selected>Payment</option>
-                            <option value="Long Time"> Long Time </option>
-                            <option value="Diaspora"> Diaspora </option>
-                            <option value="One Time"> One Time </option>
+                            <option *ngFor="let payments of lstPayments"> {{payments.pmName}} </option>
+                            <!-- <option value="1"> Long Time </option>
+                            <option value="2"> Diaspora </option>
+                            <option value="3"> One Time </option> -->
                         </select>
                         <button class="btn btn-outline-secondary" type="button">Search</button>
                     </div>

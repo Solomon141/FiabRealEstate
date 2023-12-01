@@ -2,51 +2,77 @@ import { Component, OnInit } from '@angular/core';
 import { FloorService } from "../../services/floor.service"
 import { RoomsService } from '../../services/rooms.services';
 
+import { Rooms } from 'src/app/classes/rooms';
+import { Floors } from 'src/app/classes/floors';
+import { Regions } from 'src/app/classes/regions';
+import { RegionsService } from 'src/app/services/regions.service';
+import { Payments } from 'src/app/classes/payments';
+import { PaymentTypeService } from 'src/app/services/payments.service';
+
 @Component({
   selector: 'app-advancedsearch',
   templateUrl: './advancedsearch.component.html',
   styleUrls: ['./advancedsearch.component.css']
 })
 
-export class AdvancedsearchComponent implements OnInit {
+export class AdvancedsearchComponent {
+
+  lstRooms: Rooms[] | undefined;
+  lstFloors: Floors[] | undefined;
+  lstRegions: Regions[] | undefined;
+  lstPayments: Payments[] | undefined;
+
   constructor(
     private roomsService: RoomsService,
-    private floorService: FloorService
+    private floorService: FloorService,
+    private regionService: RegionsService,
+    private paymentService: PaymentTypeService,
   ) { }
 
 
   onBedroomTypeChange(event: Event) {
     let selectedBedroomTypeId = (event.target as HTMLSelectElement).value;
-    // this.selectedCategorySubject.next(selectedCategoryId);
     console.log("selectedBedroomTypeId");
     console.log(selectedBedroomTypeId);
   }
 
   onPaymentMethodChange(event: Event) {
     let selectedPaymentMethodId = (event.target as HTMLSelectElement).value;
-    // this.selectedCategorySubject.next(selectedCategoryId);
     console.log("selectedPaymentMethodId");
     console.log(selectedPaymentMethodId);
   }
 
   onRegionChange(event: Event) {
     let selectedRegionId = (event.target as HTMLSelectElement).value;
-    // this.selectedCategorySubject.next(selectedCategoryId);
     console.log("selectedRegionId");
     console.log(selectedRegionId);
   }
 
   ngOnInit(): void {
     this.roomsService.fetchRooms().subscribe(
-      (data) => {
-        // handle the data here
-        console.log(data);
-      },
-      (error) => {
-        // handle errors here
-        console.error('Error fetching data:', error);
+      data=>{
+        this.lstRooms = data;
       }
     );
+
+    this.floorService.getFloor().subscribe(
+      data=>{
+        this.lstFloors = data;
+      }
+    );
+
+    this.regionService.fetchRegions().subscribe(
+      data=>{
+        this.lstRegions = data;
+      }
+    )
+
+    this.paymentService.getPayments().subscribe(
+      data=>{
+        this.lstPayments = data;
+      }
+    )
+
   }
 
   allItems = [{
