@@ -23,8 +23,8 @@
         [(ngModel)]="regionId"
         (ngModelChange)="onSelectionChanged($event)"
       >
-        <option *ngFor="let region of lstRegions" [value]="region.regionId">
-          {{ region.name }}
+        <option *ngFor="let floor of lstFloor" [value]="floor.floorId">
+          {{ floor.floorName }}
         </option>
       </select>
       <select

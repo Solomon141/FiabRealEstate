@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
-import { RoomsService } from 'src/app/service/rooms.service';
-import { RegionService } from 'src/app/service/region.service';
+
 import { Rooms } from 'src/app/model/rooms';
 import { Region } from 'src/app/model/region';
 import { Payment } from 'src/app/model/payment';
 import { Floor } from 'src/app/model/floor';
 import { Roomsize } from 'src/app/model/roomsize';
+
+import { RoomsService } from 'src/app/service/rooms.service';
+import { RegionService } from 'src/app/service/region.service';
 import { PaymentService } from 'src/app/service/payment.service';
+import { FloorService } from 'src/app/services/floor.service';
+import { RoomsizeService } from 'src/app/service/roomsize.service';
 
 @Component({
   selector: 'app-filtering',
@@ -18,6 +22,8 @@ export class FilteringComponent {
     private roomsService: RoomsService, 
     private regionService: RegionService,
     private paymentService: PaymentService,
+    private floorService: FloorService,
+    // private roomSizeService: RoomSizeService,
     ) {}
   
   lstRooms!: Rooms[];
@@ -45,6 +51,12 @@ export class FilteringComponent {
     this.paymentService.getPayment().subscribe(
       data=>{
         this.lstPayments = data;
+      }
+    )
+
+    this.floorService.getFloor().subscribe(
+      data=>{
+        this.lstFloor = data;
       }
     )
   }
