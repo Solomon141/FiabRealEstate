@@ -17,6 +17,7 @@ import { AboutinhomeComponent } from './home/aboutinhome/aboutinhome.component';
 import { OnebedroomComponent } from './home/onebedroom/onebedroom.component';
 import { TwobedroomComponent } from './home/twobedroom/twobedroom.component';
 import { ThreebedroomComponent } from './home/threebedroom/threebedroom.component';
+import { FilteringComponent } from './home/filtering/filtering.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ThreebedroomComponent } from './home/threebedroom/threebedroom.componen
     AboutinhomeComponent,
     OnebedroomComponent,
     TwobedroomComponent,
-    ThreebedroomComponent
+    ThreebedroomComponent,
+    FilteringComponent
   ],
   imports: [
     BrowserModule,
