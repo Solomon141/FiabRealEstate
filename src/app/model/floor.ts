@@ -1,2 +1,4 @@
-export class Floor {
+export interface Floor {
+    floorId: number;
+    floorName: string;
 }

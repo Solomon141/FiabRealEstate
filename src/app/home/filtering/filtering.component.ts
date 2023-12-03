@@ -3,6 +3,10 @@ import { RoomsService } from 'src/app/service/rooms.service';
 import { RegionService } from 'src/app/service/region.service';
 import { Rooms } from 'src/app/model/rooms';
 import { Region } from 'src/app/model/region';
+import { Payment } from 'src/app/model/payment';
+import { Floor } from 'src/app/model/floor';
+import { Roomsize } from 'src/app/model/roomsize';
+import { PaymentService } from 'src/app/service/payment.service';
 
 @Component({
   selector: 'app-filtering',
@@ -10,12 +14,24 @@ import { Region } from 'src/app/model/region';
   styleUrls: ['./filtering.component.css'],
 })
 export class FilteringComponent {
-  constructor(private roomsService: RoomsService, private regionService: RegionService) {}
+  constructor(
+    private roomsService: RoomsService, 
+    private regionService: RegionService,
+    private paymentService: PaymentService,
+    ) {}
+  
   lstRooms!: Rooms[];
   lstRegions!: Region[];
-  filteredRooms!: Rooms[];
+  lstPayments!: Payment[];
+  lstFloor!: Floor[];
+  lstRoomSize!: Roomsize[];
 
+  filteredRooms!: Rooms[];
+  
   regionId!: number;
+  paymentId!: number;
+  floorId!: number;
+  roomSizeId!: number;
 
   ngOnInit() {
     this.loadRooms();
@@ -23,6 +39,12 @@ export class FilteringComponent {
     this.regionService.fetchRegions().subscribe(
       data=>{
         this.lstRegions = data;
+      }
+    )
+
+    this.paymentService.getPayment().subscribe(
+      data=>{
+        this.lstPayments = data;
       }
     )
   }

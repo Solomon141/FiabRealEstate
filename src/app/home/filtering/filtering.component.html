@@ -9,28 +9,38 @@
         CHECK YOUR DREAM HOUSE
       </div>
       <div class="input-group" style="padding: 5px">
-        <select class="form-select" [(ngModel)]="regionId"  (ngModelChange)="onSelectionChanged($event)">
-            <option *ngFor="let region of lstRegions" [value]="region.regionId">
-                {{ region.name }}
-              </option>
-          </select>
-        <!-- <select
+        <select
           class="form-select"
-          (change)="onRegionChange($event)"
-          [(ngModel)]="locationSelectedId"
+          [(ngModel)]="regionId"
+          (ngModelChange)="onSelectionChanged($event)"
         >
-          <option selected>Choose Location</option>
-          <option *ngFor="let region of lstRegions" [value]="region.regionId">
-            {{ region.name }}
+          <option *ngFor="let payment of lstPayments" [value]="payment.pmId">
+            {{ payment.pmName }}
           </option>
-        </select> -->
-        <button class="btn btn-outline-secondary" type="button">Search</button>
+        </select>
+        <select
+        class="form-select"
+        [(ngModel)]="regionId"
+        (ngModelChange)="onSelectionChanged($event)"
+      >
+        <option *ngFor="let region of lstRegions" [value]="region.regionId">
+          {{ region.name }}
+        </option>
+      </select>
+      <select
+      class="form-select"
+      [(ngModel)]="regionId"
+      (ngModelChange)="onSelectionChanged($event)"
+    >
+      <option *ngFor="let region of lstRegions" [value]="region.regionId">
+        {{ region.name }}
+      </option>
+    </select>
+        <!-- <button class="btn btn-outline-secondary" type="button">Search</button> -->
       </div>
     </div>
   </div>
 
-
-  
   <div *ngIf="filteredRooms">
     <div class="row">
       <div class="col-sm-4" *ngFor="let item of filteredRooms">
@@ -63,11 +73,8 @@
               >
             </div>
           </div>
-       
         </div>
       </div>
     </div>
   </div>
-
-
 </div>

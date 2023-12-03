@@ -1,2 +1,4 @@
-export class Roomsize {
+export interface Roomsize {
+    roomSizeId: number;
+    name: string;
 }

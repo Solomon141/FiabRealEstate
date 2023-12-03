@@ -1,2 +1,4 @@
-export class Payment {
+export interface Payment {
+    pmId: number;
+    pmName: string;
 }
