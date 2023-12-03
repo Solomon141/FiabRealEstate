@@ -7,7 +7,7 @@ export class RegionsService {
     constructor(private http: HttpClient) { }
 
     fetchRegions(): Observable<any> {
-        const url = 'http://localhost:8082/region';
+        const url = 'http://localhost:8083/region';
         return this.http.get(url);
     }
 

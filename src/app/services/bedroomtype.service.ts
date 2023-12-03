@@ -13,13 +13,13 @@ export class BeedRoomService {
     createFloor(bedrommtypes: { pmName: string }) {
         console.log(bedrommtypes)
         const headers = new HttpHeaders({ 'myHeader': "solWorkingHere" });
-        this.http.post<{ name: string }>('http://localhost:8082/pm', bedrommtypes, { headers: headers }).subscribe((res) => {
+        this.http.post<{ name: string }>('http://localhost:8083/pm', bedrommtypes, { headers: headers }).subscribe((res) => {
             console.log(res)
         })
     }
 
     getFloor(): Observable<any>{
-        const url = 'http://localhost:8082/floor';
+        const url = 'http://localhost:8083/floor';
         return this.http.get(url)
     }
 

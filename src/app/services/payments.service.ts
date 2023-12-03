@@ -13,13 +13,13 @@ export class PaymentTypeService {
     createPayment(payments: { pmName: string }) {
         console.log(payments)
         const headers = new HttpHeaders({ 'myHeader': "solWorkingHere" });
-        this.http.post<{ name: string }>('http://localhost:8082/pm', payments, { headers: headers }).subscribe((res) => {
+        this.http.post<{ name: string }>('http://localhost:8083/pm', payments, { headers: headers }).subscribe((res) => {
             console.log(res)
         })
     }
 
     getPayments(): Observable<any>{
-        const url = 'http://localhost:8082/pm';
+        const url = 'http://localhost:8083/pm';
         return this.http.get(url)
     }
 

@@ -7,7 +7,7 @@ export class RoomsService {
     constructor(private http: HttpClient) { }
 
     fetchRooms(): Observable<any> {
-        const url = 'http://localhost:8082/rooms';
+        const url = 'http://localhost:8083/rooms';
         return this.http.get(url);
     }
 

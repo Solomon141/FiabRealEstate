@@ -13,7 +13,7 @@ export class FloorService {
     createFloor(floors: { floorName: string, floorData: string }) {
         console.log(floors)
         const headers = new HttpHeaders({ 'myHeader': "solWorkingHere" });
-        this.http.post<{ name: string }>('http://localhost:8082/floor', floors, { headers: headers }).subscribe((res) => {
+        this.http.post<{ name: string }>('http://localhost:8083/floor', floors, { headers: headers }).subscribe((res) => {
             console.log(res)
         })
     }
@@ -23,7 +23,7 @@ export class FloorService {
     // }
 
     getFloor(): Observable<any>{
-        const url = 'http://localhost:8082/floor';
+        const url = 'http://localhost:8083/floor';
         return this.http.get(url)
     }
 
