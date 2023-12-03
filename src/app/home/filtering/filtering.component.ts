@@ -19,13 +19,13 @@ import { RoomsizeService } from 'src/app/service/roomsize.service';
 })
 export class FilteringComponent {
   constructor(
-    private roomsService: RoomsService, 
+    private roomsService: RoomsService,
     private regionService: RegionService,
     private paymentService: PaymentService,
     private floorService: FloorService,
-    // private roomSizeService: RoomSizeService,
-    ) {}
-  
+    private roomSizeService: RoomsizeService,
+  ) {}
+
   lstRooms!: Rooms[];
   lstRegions!: Region[];
   lstPayments!: Payment[];
@@ -33,7 +33,7 @@ export class FilteringComponent {
   lstRoomSize!: Roomsize[];
 
   filteredRooms!: Rooms[];
-  
+
   regionId!: number;
   paymentId!: number;
   floorId!: number;
@@ -42,23 +42,21 @@ export class FilteringComponent {
   ngOnInit() {
     this.loadRooms();
 
-    this.regionService.fetchRegions().subscribe(
-      data=>{
-        this.lstRegions = data;
-      }
-    )
+    this.regionService.fetchRegions().subscribe((data) => {
+      this.lstRegions = data;
+    });
 
-    this.paymentService.getPayment().subscribe(
-      data=>{
-        this.lstPayments = data;
-      }
-    )
+    this.paymentService.getPayment().subscribe((data) => {
+      this.lstPayments = data;
+    });
 
-    this.floorService.getFloor().subscribe(
-      data=>{
-        this.lstFloor = data;
-      }
-    )
+    this.floorService.getFloor().subscribe((data) => {
+      this.lstFloor = data;
+    });
+
+    this.roomSizeService.getRoomSizes().subscribe((data) => {
+      this.lstRoomSize = data;
+    });
   }
 
   loadRooms() {
@@ -71,7 +69,9 @@ export class FilteringComponent {
 
   onSelectionChanged(roomId: any) {
     console.log(' Region id is : ' + roomId);
-    this.filteredRooms = this.lstRooms.filter((r) => r.region.regionId == roomId);
+    this.filteredRooms = this.lstRooms.filter(
+      (r) => r.region.regionId == roomId
+    );
     console.log(this.filteredRooms);
   }
 }
