@@ -1,61 +1,100 @@
-<div class="container" style="padding-top: 5vh; padding-bottom: 5vh;">
-    <div class="searchBar">
-        <div class="row">
-            <div class="col-sm-12">
-               {{payementMethodSelectedId}} {{locationSelectedId}}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="card" style="width: 100%; border-color: #FF9E7B;" >
-                    <div class="card-header text-center" style="color: #FF9E7B; text-transform: uppercase; font-weight: bold;">
-                        CHECK YOUR DREAM HOUSE
-                    </div>
-                    <div class="input-group" style="padding: 5px;">
-                        <select class="form-select" (change)="onRegionChange($event)" [(ngModel)]='locationSelectedId' >
-                            <option selected>Choose Location</option>
-                            <option *ngFor="let region of lstRegions" [value]="region.regionId"> {{region.name}} </option>
-                        </select>
-                        <select class="form-select" (change)="onBedroomTypeChange($event)" id="inputGroupSelect04"
-                            aria-label="Example select with button addon">
-                            <option selected>Type</option>
-                            <!-- <option *ngFor="let room of lstRooms"> Addis Ababa </option> -->
-                            <option value="1">1 Bed Room  </option>
-                            <option value="2">2 Bed Room</option>
-                            <option value="3">3 Bed Room</option>
-                        </select>
-                        <select class="form-select" (change)="onPaymentMethodChange($event)" [(ngModel)]='payementMethodSelectedId' >
-                            <option *ngFor="let payments of lstPayments" [value]="payments.pmId"> {{payments.pmName}} </option>
-                        </select>
-                        <button class="btn btn-outline-secondary" type="button">Search</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="container" style="padding-top: 5vh; padding-bottom: 5vh">
+  <div class="searchBar">
+    <div class="row">
+      <div class="col-sm-12">
+        {{ payementMethodSelectedId }} {{ locationSelectedId }}
+      </div>
     </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card" style="width: 100%; border-color: #ff9e7b">
+          <div
+            class="card-header text-center"
+            style="color: #ff9e7b; text-transform: uppercase; font-weight: bold"
+          >
+            CHECK YOUR DREAM HOUSE
+          </div>
+          <div class="input-group" style="padding: 5px">
+            <select
+              class="form-select"
+              (change)="onRegionChange($event)"
+              [(ngModel)]="locationSelectedId"
+            >
+              <option selected>Choose Location</option>
+              <option
+                *ngFor="let region of lstRegions"
+                [value]="region.regionId"
+              >
+                {{ region.name }}
+              </option>
+            </select>
+            <select
+              class="form-select"
+              (change)="onBedroomTypeChange($event)"
+              id="inputGroupSelect04"
+              aria-label="Example select with button addon"
+            >
+              <option selected>Type</option>
+              <!-- <option *ngFor="let room of lstRooms"> Addis Ababa </option> -->
+              <option value="1">1 Bed Room</option>
+              <option value="2">2 Bed Room</option>
+              <option value="3">3 Bed Room</option>
+            </select>
+            <select
+              class="form-select"
+              (change)="onPaymentMethodChange($event)"
+              [(ngModel)]="payementMethodSelectedId"
+            >
+              <option
+                *ngFor="let payments of lstPayments"
+                [value]="payments.pmId"
+              >
+                {{ payments.pmName }}
+              </option>
+            </select>
+            <button class="btn btn-outline-secondary" type="button">
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <div *ngIf="lstRooms">
-        <div class="row">
-            <div class="col-sm-4" *ngFor="let item of lstRooms">
-                <div class="card" style="width: 100%;  margin-top:5px">
+  <div *ngIf="lstRooms">
+    <div class="row">
+      <div class="col-sm-4" *ngFor="let item of lstRooms">
+        <div class="card" style="width: 100%; margin-top: 5px">
+          <img
+            [src]="item.imgPath"
+            style="height: 30vh"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <div
+              id="bradColor"
+              style="
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+              "
+            >
+              <h5 class="card-title">{{ item.region?.name }}</h5>
+            </div>
 
+            <div class="card-text">
+              <h5 class="card-title">{{ item.area }} &#13217;</h5>
+            </div>
+            <div>{{ item.price }}</div>
+            <div style="display: flex; justify-content: center">
+              <a href="#" style="background-color: #ff9e7b" class="btn"
+                >View Detail</a
+              >
+            </div>
+          </div>
 
-                    <img [src]="item.imgPath" style="height: 30vh;" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div id="bradColor" style="display: flex; flex-direction: row; justify-content: space-between;">
-                            <h5 class="card-title"> {{item.region?.name}} </h5>
-                            <h5 class="card-title"> {{item.area}} &#13217; </h5>
-                        </div>
-                        
-                        <div class="card-text">{{item.price}}.</div>
-                        <div> {{item.price}} </div>
-                        <div style=" display: flex; justify-content:center">
-                            <a href="#" style="background-color:#FF9E7B" class="btn">View Detail</a>
-                        </div>
-                    </div>
-
-
-                    <!-- <img [src]="item.imgpath" style="height: 30vh;" class="card-img-top" alt="...">
+          <!-- <img [src]="item.imgpath" style="height: 30vh;" class="card-img-top" alt="...">
                     <div class="card-body">
                         <div id="bradColor" style="display: flex; flex-direction: row; justify-content: space-between;">
                             <h5 class="card-title"> {{item.lacated.region}} </h5>
@@ -68,9 +107,8 @@
                             <a href="#" style="background-color:#FF9E7B" class="btn">View Detail</a>
                         </div>
                     </div> -->
-                </div>
-            </div>
         </div>
-
+      </div>
     </div>
+  </div>
 </div>

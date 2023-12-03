@@ -17,13 +17,26 @@ import { PaymentTypeService } from 'src/app/services/payments.service';
 
 export class AdvancedsearchComponent {
 
+  // items: any[] = ;
+
+  // searchText: string = '';
+
   lstRooms: Rooms[] | undefined;
+
   lstFloors: Floors[] | undefined;
   lstRegions: Regions[] | undefined;
   lstPayments: Payments[] | undefined;
 
   payementMethodSelectedId: number | undefined;
   locationSelectedId: number | undefined;
+
+
+  filteredItems(): any[] {
+    console.log("Region id from the filter");
+
+    // return this.items.filter(item => item.name.toLowerCase().includes(this.searchText.toLowerCase()));
+    return this.lstRooms ? this.lstRooms.filter(rooms => rooms.region.regionId === this.locationSelectedId) : [];
+  }
 
   constructor(
     private roomsService: RoomsService,
@@ -48,6 +61,8 @@ export class AdvancedsearchComponent {
     let selectedRegionId = (event.target as HTMLSelectElement).value;
     console.log("selectedRegionId");
     console.log(selectedRegionId);
+    return this.lstRooms ? this.lstRooms.filter(rooms => rooms.region.regionId === this.locationSelectedId) : [];
+
   }
 
   ngOnInit(): void {
