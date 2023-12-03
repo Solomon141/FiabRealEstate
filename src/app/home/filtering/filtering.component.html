@@ -1,1 +1,73 @@
-<p>filtering works!</p>
+<div class="container">
+  <div class="row">
+    div class="col-sm-12">
+    <div class="card" style="width: 100%; border-color: #ff9e7b">
+      <div
+        class="card-header text-center"
+        style="color: #ff9e7b; text-transform: uppercase; font-weight: bold"
+      >
+        CHECK YOUR DREAM HOUSE
+      </div>
+      <div class="input-group" style="padding: 5px">
+        <select class="form-select" [(ngModel)]="regionId"  (ngModelChange)="onSelectionChanged($event)">
+            <option *ngFor="let region of lstRegions" [value]="region.regionId">
+                {{ region.name }}
+              </option>
+          </select>
+        <!-- <select
+          class="form-select"
+          (change)="onRegionChange($event)"
+          [(ngModel)]="locationSelectedId"
+        >
+          <option selected>Choose Location</option>
+          <option *ngFor="let region of lstRegions" [value]="region.regionId">
+            {{ region.name }}
+          </option>
+        </select> -->
+        <button class="btn btn-outline-secondary" type="button">Search</button>
+      </div>
+    </div>
+  </div>
+
+
+  
+  <div *ngIf="filteredRooms">
+    <div class="row">
+      <div class="col-sm-4" *ngFor="let item of filteredRooms">
+        <div class="card" style="width: 100%; margin-top: 5px">
+          <img
+            [src]="item.imgPath"
+            style="height: 30vh"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <div
+              id="bradColor"
+              style="
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+              "
+            >
+              <h5 class="card-title">{{ item.region?.name }}</h5>
+            </div>
+
+            <div class="card-text">
+              <h5 class="card-title">{{ item.area }} &#13217;</h5>
+            </div>
+            <div>{{ item.price }}</div>
+            <div style="display: flex; justify-content: center">
+              <a href="#" style="background-color: #ff9e7b" class="btn"
+                >View Detail</a
+              >
+            </div>
+          </div>
+       
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
