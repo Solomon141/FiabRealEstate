@@ -10,32 +10,32 @@
       <div class="input-group" style="padding: 5px">
         <select
           class="form-select"
-          [(ngModel)]="regionId"
-          (ngModelChange)="onSelectionChanged($event)"
+          [(ngModel)]="paymentId"
+          (ngModelChange)="onPaymentSelectionChanged()"
         >
           <option *ngFor="let payment of lstPayments" [value]="payment.pmId">
             {{ payment.pmName }}
           </option>
         </select>
-        <select
+        <!-- <select
         class="form-select"
-        [(ngModel)]="regionId"
-        (ngModelChange)="onSelectionChanged($event)"
+        [(ngModel)]="floorId"
+        (ngModelChange)="onSelectionChanged()"
       >
         <option *ngFor="let floor of lstFloor" [value]="floor.floorId">
           {{ floor.floorName }}
         </option>
-      </select>
+      </select> -->
       <select
       class="form-select"
-      [(ngModel)]="regionId"
-      (ngModelChange)="onSelectionChanged($event)"
+      [(ngModel)]="roomSizeId"
+      (ngModelChange)="onRoomSizeSelectionChanged()"
     >
       <option *ngFor="let roomsize of lstRoomSize" [value]="roomsize.roomSizeId">
         {{ roomsize.name }}
       </option>
     </select>
-        <!-- <button class="btn btn-outline-secondary" type="button">Search</button> -->
+        <button class="btn btn-outline-secondary" (click)="onReset()" type="button">reset</button>
       </div>
     </div>
   </div>

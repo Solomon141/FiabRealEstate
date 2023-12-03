@@ -6,6 +6,7 @@ export interface Rooms {
     isCompleted: boolean;
     floor: any;
     region: any;
-    paymentMethod: any;
+    payment: any;
+    roomSize: any;
   }
   

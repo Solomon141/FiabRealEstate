@@ -23,7 +23,7 @@ export class FilteringComponent {
     private regionService: RegionService,
     private paymentService: PaymentService,
     private floorService: FloorService,
-    private roomSizeService: RoomsizeService,
+    private roomSizeService: RoomsizeService
   ) {}
 
   lstRooms!: Rooms[];
@@ -42,36 +42,67 @@ export class FilteringComponent {
   ngOnInit() {
     this.loadRooms();
 
-    this.regionService.fetchRegions().subscribe((data) => {
+    this.regionService.fetchRegions().subscribe((data: any) => {
       this.lstRegions = data;
     });
 
-    this.paymentService.getPayment().subscribe((data) => {
+    this.paymentService.getPayment().subscribe((data: any) => {
       this.lstPayments = data;
     });
 
-    this.floorService.getFloor().subscribe((data) => {
+    this.floorService.getFloor().subscribe((data: any) => {
       this.lstFloor = data;
     });
 
-    this.roomSizeService.getRoomSizes().subscribe((data) => {
+    this.roomSizeService.getRoomSizes().subscribe((data: any) => {
       this.lstRoomSize = data;
     });
   }
 
   loadRooms() {
-    this.roomsService.getRooms().subscribe((data) => {
+    this.roomsService.getRooms().subscribe((data: any) => {
       this.lstRooms = data;
       this.filteredRooms = data;
       console.log(this.lstRooms);
     });
   }
 
-  onSelectionChanged(roomId: any) {
-    console.log(' Region id is : ' + roomId);
-    this.filteredRooms = this.lstRooms.filter(
-      (r) => r.region.regionId == roomId
-    );
-    console.log(this.filteredRooms);
+  onReset(){
+    this.floorId === undefined;
+    this.roomSizeId === undefined;
+    this.paymentId === undefined;
+
+    this.filteredRooms = this.lstRooms;
+  }
+
+  onPaymentSelectionChanged() {
+
+    if (this.roomSizeId === undefined) {
+      this.filteredRooms = this.lstRooms.filter(
+        (r) => r.payment.pmId == this.paymentId
+      );
+    } else {
+      this.filteredRooms = this.lstRooms.filter(
+        (r) => r.roomSize.roomSizeId == this.roomSizeId
+      );
+      this.filteredRooms = this.filteredRooms.filter(
+        (r) => r.payment.pmId == this.paymentId
+      );
+    }
+  }
+
+  onRoomSizeSelectionChanged() {
+    if (this.paymentId === undefined) {
+      this.filteredRooms = this.lstRooms.filter(
+        (r) => r.roomSize.roomSizeId == this.roomSizeId
+      );
+    } else {
+      this.filteredRooms = this.lstRooms.filter(
+        (r) => r.payment.pmId == this.paymentId
+      );
+      this.filteredRooms = this.filteredRooms.filter(
+        (r) => r.roomSize.roomSizeId == this.roomSizeId
+      );
+    }
   }
 }
