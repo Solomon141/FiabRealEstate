@@ -26,24 +26,34 @@
           {{ floor.floorName }}
         </option>
       </select> -->
-      <select
-      class="form-select"
-      [(ngModel)]="roomSizeId"
-      (ngModelChange)="onRoomSizeSelectionChanged()"
-    >
-      <option *ngFor="let roomsize of lstRoomSize" [value]="roomsize.roomSizeId">
-        {{ roomsize.name }}
-      </option>
-    </select>
-        <button class="btn btn-outline-secondary" (click)="onReset()" type="button">reset</button>
+        <select
+          class="form-select"
+          [(ngModel)]="roomSizeId"
+          (ngModelChange)="onRoomSizeSelectionChanged()"
+        >
+          <option
+            *ngFor="let roomsize of lstRoomSize"
+            [value]="roomsize.roomSizeId"
+          >
+            {{ roomsize.name }}
+          </option>
+        </select>
+        <button
+          class="btn btn-outline-secondary"
+          (click)="onReset()"
+          type="button"
+        >
+          reset
+        </button>
       </div>
     </div>
   </div>
 
   <div *ngIf="filteredRooms">
     <div class="row">
-      <div class="col-sm-4" *ngFor="let item of filteredRooms">
-        <div class="card" style="width: 100%; margin-top: 5px">
+      <div class="col-sm-4" *ngFor="let item of filteredRooms" >
+        <!-- {item.isCompleted ? "border-color:#ff9e7b": ""} -->
+        <div class="card" style="width: 100%; margin-top: 5px; margin-right: 2px; border-width: 2px; ">
           <img
             [src]="item.imgPath"
             style="height: 30vh"
