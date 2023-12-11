@@ -17,7 +17,7 @@
             {{ payment.pmName }}
           </option>
         </select>
-       
+
         <select
           class="form-select"
           [(ngModel)]="roomSizeId"
@@ -43,9 +43,17 @@
 
   <div *ngIf="filteredRooms">
     <div class="row">
-      <div class="col-sm-4" *ngFor="let item of filteredRooms" >
+      <div class="col-sm-4" *ngFor="let item of filteredRooms">
         <!-- {item.isCompleted ? "border-color:#ff9e7b": ""} -->
-        <div class="card" style="width: 100%; margin-top: 5px; margin-right: 2px; border-width: 2px; ">
+        <div
+          class="card"
+          style="
+            width: 100%;
+            margin-top: 5px;
+            margin-right: 2px;
+            border-width: 2px;
+          "
+        >
           <img
             [src]="item.imgPath"
             style="height: 30vh"
@@ -62,21 +70,27 @@
               "
             >
               <h5 class="card-title">{{ item.region?.name }}</h5>
-              <h5 class="card-title">{{ item.area }}  &#13217;</h5>
+              <h5 class="card-title">{{ item.area }} &#13217;</h5>
             </div>
 
             <div
-            id="bradColor"
-            style="
-              display: flex;
-              flex-direction: row;
-              justify-content: space-between;
-            "
-          >
-          <h5 class="card-title">PRICE </h5>
-          <h5 class="card-title">{{ item.price | currency }} </h5>
+              id="bradColor"
+              style="
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+              "
+            >
+              <h5 class="card-title">PRICE</h5>
+              <h5 class="card-title">{{ item.price | currency }}</h5>
             </div>
-<!-- 
+
+            <div>
+              <!-- {{ item.price | currency [ : currencyCode [ : display [ : digitsInfo [ : locale ] ] ] ] }} -->
+              {{ item.price | currency : 'ETB' }}
+            </div>
+
+            <!-- 
             <div class="card-text">
              
             </div> -->
