@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Region } from '../model/region';
 
+import { of } from 'rxjs';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -25,7 +27,7 @@ export class RegionService {
 ];
 
   fetchRegions(): Observable<any> {
-    return this.httpClient.get('http://localhost:8083/region');
-    // return of(this.allRegions);
+    // return this.httpClient.get('http://localhost:8083/region');
+    return of(this.allRegions);
   }
 }
