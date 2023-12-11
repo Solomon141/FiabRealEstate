@@ -3,6 +3,7 @@ export interface Rooms {
     imgPath: string;
     area: string;
     price: string;
+    descr: any;
     isCompleted: boolean;
     floor: any;
     region: any;
