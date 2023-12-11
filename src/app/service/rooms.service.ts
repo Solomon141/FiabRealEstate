@@ -12,150 +12,246 @@ export class RoomsService {
 
   private allRooms: Rooms[] = [
     {
-      roomId: 4,
-      imgPath: 'assets/search/1.jpg',
-      area: 'new area',
-      price: '100000',
-      descr: null,
-      isCompleted: false,
-      floor: {
-        floorId: 1,
-        floorName: 'First Floor',
-      },
-      region: {
-        regionId: 1,
-        name: 'Addis Ababa',
-      },
-      payment: {
-        pmId: 1,
-        pmName: 'Long Term',
-      },
-      roomSize: {
-        roomSizeId: 1,
-        name: '1 Bed Room',
-      },
+        "roomId": 1,
+        "imgPath": "assets/search/21.jpeg",
+        "area": "67",
+        "price": "200000",
+        "descr": "FIAB REAL ESTATE IS A SHARE COMPANY ESTABLISHED AND ORGANIZED BY AMIGOS SACOO FOUNDERS AND MEMBERS.",
+        "isCompleted": false,
+        "floor": {
+            "floorId": 2,
+            "floorName": "Second Floor"
+        },
+        "region": {
+            "regionId": 1,
+            "name": "Addis Ababa"
+        },
+        "payment": {
+            "pmId": 2,
+            "pmName": "Long Term Payment"
+        },
+        "roomSize": {
+            "roomSizeId": 2,
+            "name": "Two Bed Room"
+        }
     },
     {
-      roomId: 5,
-      imgPath: 'assets/search/2.jpg',
-      area: 'new area',
-      price: '100000',
-      descr: null,
-      isCompleted: false,
-      floor: {
-        floorId: 2,
-        floorName: 'Second Floor',
-      },
-      region: {
-        regionId: 1,
-        name: 'Addis Ababa',
-      },
-      payment: {
-        pmId: 1,
-        pmName: 'Long Term',
-      },
-      roomSize: {
-        roomSizeId: 2,
-        name: '2 Bed Room',
-      },
+        "roomId": 2,
+        "imgPath": "assets/search/22.jpeg",
+        "area": "52",
+        "price": "200000",
+        "descr": "FIAB REAL ESTATE IS A SHARE COMPANY ESTABLISHED AND ORGANIZED BY AMIGOS SACOO FOUNDERS AND MEMBERS.",
+        "isCompleted": false,
+        "floor": {
+            "floorId": 2,
+            "floorName": "Second Floor"
+        },
+        "region": {
+            "regionId": 1,
+            "name": "Addis Ababa"
+        },
+        "payment": {
+            "pmId": 2,
+            "pmName": "Long Term Payment"
+        },
+        "roomSize": {
+            "roomSizeId": 1,
+            "name": "One Bed Room"
+        }
     },
     {
-      roomId: 6,
-      imgPath: 'assets/search/3.jpeg',
-      area: 'new area',
-      price: '200000',
-      descr: null,
-      isCompleted: false,
-      floor: {
-        floorId: 2,
-        floorName: 'Second Floor',
-      },
-      region: {
-        regionId: 1,
-        name: 'Addis Ababa',
-      },
-      payment: {
-        pmId: 2,
-        pmName: 'Short Term',
-      },
-      roomSize: {
-        roomSizeId: 2,
-        name: '2 Bed Room',
-      },
+        "roomId": 3,
+        "imgPath": "assets/search/3.jpeg",
+        "area": "52",
+        "price": "150000",
+        "descr": "FIAB REAL ESTATE IS A SHARE COMPANY ESTABLISHED AND ORGANIZED BY AMIGOS SACOO FOUNDERS AND MEMBERS.",
+        "isCompleted": false,
+        "floor": {
+            "floorId": 2,
+            "floorName": "Second Floor"
+        },
+        "region": {
+            "regionId": 1,
+            "name": "Addis Ababa"
+        },
+        "payment": {
+            "pmId": 1,
+            "pmName": "Full Payment"
+        },
+        "roomSize": {
+            "roomSizeId": 1,
+            "name": "One Bed Room"
+        }
     },
     {
-      roomId: 7,
-      imgPath: 'assets/search/6.webp',
-      area: 'new area',
-      price: '100000',
-      descr: null,
-      isCompleted: false,
-      floor: {
-        floorId: 3,
-        floorName: 'Third Floor',
-      },
-      region: {
-        regionId: 1,
-        name: 'Addis Ababa',
-      },
-      payment: {
-        pmId: 2,
-        pmName: 'Short Term',
-      },
-      roomSize: {
-        roomSizeId: 3,
-        name: '3 Bed Room',
-      },
+        "roomId": 4,
+        "imgPath": "assets/search/4.jpeg",
+        "area": "52",
+        "price": "150000",
+        "descr": "FIAB REAL ESTATE IS A SHARE COMPANY ESTABLISHED AND ORGANIZED BY AMIGOS SACOO FOUNDERS AND MEMBERS.",
+        "isCompleted": true,
+        "floor": {
+            "floorId": 3,
+            "floorName": "Third Floor"
+        },
+        "region": {
+            "regionId": 1,
+            "name": "Addis Ababa"
+        },
+        "payment": {
+            "pmId": 1,
+            "pmName": "Full Payment"
+        },
+        "roomSize": {
+            "roomSizeId": 1,
+            "name": "One Bed Room"
+        }
     },
     {
-      roomId: 8,
-      imgPath: 'assets/search/7.jpg',
-      area: 'new area',
-      price: '100000',
-      descr: null,
-      isCompleted: false,
-      floor: {
-        floorId: 3,
-        floorName: 'Third Floor',
-      },
-      region: {
-        regionId: 1,
-        name: 'Addis Ababa',
-      },
-      payment: {
-        pmId: 2,
-        pmName: 'Short Term',
-      },
-      roomSize: {
-        roomSizeId: 3,
-        name: '3 Bed Room',
-      },
+        "roomId": 5,
+        "imgPath": "assets/search/5.jpeg",
+        "area": "52",
+        "price": "380000",
+        "descr": "FIAB REAL ESTATE IS A SHARE COMPANY ESTABLISHED AND ORGANIZED BY AMIGOS SACOO FOUNDERS AND MEMBERS.",
+        "isCompleted": true,
+        "floor": {
+            "floorId": 1,
+            "floorName": "First Floor"
+        },
+        "region": {
+            "regionId": 1,
+            "name": "Addis Ababa"
+        },
+        "payment": {
+            "pmId": 1,
+            "pmName": "Full Payment"
+        },
+        "roomSize": {
+            "roomSizeId": 1,
+            "name": "One Bed Room"
+        }
     },
     {
-      roomId: 9,
-      imgPath: 'assets/search/8.jpeg',
-      area: 'new area',
-      price: '200000',
-      descr: null,
-      isCompleted: false,
-      floor: {
-        floorId: 3,
-        floorName: 'Third Floor',
-      },
-      region: {
-        regionId: 1,
-        name: 'Addis Ababa',
-      },
-      payment: {
-        pmId: 1,
-        pmName: 'Long Term',
-      },
-      roomSize: {
-        roomSizeId: 3,
-        name: '3 Bed Room',
-      },
+        "roomId": 6,
+        "imgPath": "assets/search/6.webp",
+        "area": "67",
+        "price": "200000",
+        "descr": "FIAB REAL ESTATE IS A SHARE COMPANY ESTABLISHED AND ORGANIZED BY AMIGOS SACOO FOUNDERS AND MEMBERS.",
+        "isCompleted": false,
+        "floor": {
+            "floorId": 2,
+            "floorName": "Second Floor"
+        },
+        "region": {
+            "regionId": 1,
+            "name": "Addis Ababa"
+        },
+        "payment": {
+            "pmId": 2,
+            "pmName": "Long Term Payment"
+        },
+        "roomSize": {
+            "roomSizeId": 2,
+            "name": "Two Bed Room"
+        }
     },
-  ];
+    {
+        "roomId": 7,
+        "imgPath": "assets/search/7.jpg",
+        "area": "130",
+        "price": "200000",
+        "descr": "FIAB REAL ESTATE IS A SHARE COMPANY ESTABLISHED AND ORGANIZED BY AMIGOS SACOO FOUNDERS AND MEMBERS.",
+        "isCompleted": false,
+        "floor": {
+            "floorId": 2,
+            "floorName": "Second Floor"
+        },
+        "region": {
+            "regionId": 1,
+            "name": "Addis Ababa"
+        },
+        "payment": {
+            "pmId": 2,
+            "pmName": "Long Term Payment"
+        },
+        "roomSize": {
+            "roomSizeId": 3,
+            "name": "Three Bed Room"
+        }
+    },
+    {
+        "roomId": 8,
+        "imgPath": "assets/search/8.jpeg",
+        "area": "130",
+        "price": "150000",
+        "descr": "FIAB REAL ESTATE IS A SHARE COMPANY ESTABLISHED AND ORGANIZED BY AMIGOS SACOO FOUNDERS AND MEMBERS.",
+        "isCompleted": false,
+        "floor": {
+            "floorId": 2,
+            "floorName": "Second Floor"
+        },
+        "region": {
+            "regionId": 1,
+            "name": "Addis Ababa"
+        },
+        "payment": {
+            "pmId": 1,
+            "pmName": "Full Payment"
+        },
+        "roomSize": {
+            "roomSizeId": 3,
+            "name": "Three Bed Room"
+        }
+    },
+    {
+        "roomId": 9,
+        "imgPath": "assets/search/9.jpeg",
+        "area": "130",
+        "price": "150000",
+        "descr": "FIAB REAL ESTATE IS A SHARE COMPANY ESTABLISHED AND ORGANIZED BY AMIGOS SACOO FOUNDERS AND MEMBERS.",
+        "isCompleted": true,
+        "floor": {
+            "floorId": 3,
+            "floorName": "Third Floor"
+        },
+        "region": {
+            "regionId": 1,
+            "name": "Addis Ababa"
+        },
+        "payment": {
+            "pmId": 1,
+            "pmName": "Full Payment"
+        },
+        "roomSize": {
+            "roomSizeId": 3,
+            "name": "Three Bed Room"
+        }
+    },
+    {
+        "roomId": 10,
+        "imgPath": "assets/search/10.jpeg",
+        "area": "130",
+        "price": "380000",
+        "descr": "FIAB REAL ESTATE IS A SHARE COMPANY ESTABLISHED AND ORGANIZED BY AMIGOS SACOO FOUNDERS AND MEMBERS.",
+        "isCompleted": true,
+        "floor": {
+            "floorId": 1,
+            "floorName": "First Floor"
+        },
+        "region": {
+            "regionId": 1,
+            "name": "Addis Ababa"
+        },
+        "payment": {
+            "pmId": 1,
+            "pmName": "Full Payment"
+        },
+        "roomSize": {
+            "roomSizeId": 3,
+            "name": "Three Bed Room"
+        }
+    }
+];
 
   getRooms(): Observable<Rooms[]> {
     console.log('geting rooms');

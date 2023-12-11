@@ -17,15 +17,7 @@
             {{ payment.pmName }}
           </option>
         </select>
-        <!-- <select
-        class="form-select"
-        [(ngModel)]="floorId"
-        (ngModelChange)="onSelectionChanged()"
-      >
-        <option *ngFor="let floor of lstFloor" [value]="floor.floorId">
-          {{ floor.floorName }}
-        </option>
-      </select> -->
+       
         <select
           class="form-select"
           [(ngModel)]="roomSizeId"
@@ -70,12 +62,25 @@
               "
             >
               <h5 class="card-title">{{ item.region?.name }}</h5>
+              <h5 class="card-title">{{ item.area }}  &#13217;</h5>
             </div>
 
-            <div class="card-text">
-              <h5 class="card-title">{{ item.area }} &#13217;</h5>
+            <div
+            id="bradColor"
+            style="
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+            "
+          >
+          <h5 class="card-title">PRICE </h5>
+          <h5 class="card-title">{{ item.price | currency }} </h5>
             </div>
-            <div>{{ item.price }}</div>
+<!-- 
+            <div class="card-text">
+             
+            </div> -->
+            <div>{{ item.descr }}</div>
             <div style="display: flex; justify-content: center">
               <a href="#" style="background-color: #ff9e7b" class="btn"
                 >View Detail</a
