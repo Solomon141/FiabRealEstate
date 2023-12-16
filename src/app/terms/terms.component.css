@@ -1,0 +1,15 @@
+.termsTitle {
+    font-size: 50px; 
+    font-weight: bolder; 
+    text-transform: uppercase; 
+    color: #ff9e7b !important;
+    text-decoration: underline;
+}
+
+ol li.liTitle {
+    /* Add styles to list items (li) inside the ordered list */
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: bolder;
+  }

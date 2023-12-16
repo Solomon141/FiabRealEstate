@@ -18,6 +18,7 @@ import { OnebedroomComponent } from './home/onebedroom/onebedroom.component';
 import { TwobedroomComponent } from './home/twobedroom/twobedroom.component';
 import { ThreebedroomComponent } from './home/threebedroom/threebedroom.component';
 import { FilteringComponent } from './home/filtering/filtering.component';
+import { TermsComponent } from './terms/terms.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { FilteringComponent } from './home/filtering/filtering.component';
     OnebedroomComponent,
     TwobedroomComponent,
     ThreebedroomComponent,
-    FilteringComponent
+    FilteringComponent,
+    TermsComponent
   ],
   imports: [
     BrowserModule,

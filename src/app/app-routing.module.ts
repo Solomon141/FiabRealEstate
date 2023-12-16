@@ -7,6 +7,7 @@ import { ContactComponent } from './contact/contact/contact.component';
 import { OnebedroomComponent } from './home/onebedroom/onebedroom.component';
 import { TwobedroomComponent } from './home/twobedroom/twobedroom.component';
 import { ThreebedroomComponent } from './home/threebedroom/threebedroom.component';
+import { TermsComponent } from './terms/terms.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'onebedroom', component: OnebedroomComponent },
   { path: 'twobedroom', component: TwobedroomComponent },
   { path: 'threebedroom', component: ThreebedroomComponent },
+  { path: 'terms', component: TermsComponent}
 ];
 
 @NgModule({
